@@ -54,10 +54,20 @@ instance OurShow Bool where
     ourShow True  = "True"
     ourShow False = "False"
 
+instance (OurShow a, OurShow b) => OurShow (a,b) where
+    ourShow (x,y) = "(" ++ ourShow x ++ "," ++ ourShow y ++ ")"
+
+instance (OurShow a, OurShow b, OurShow c) => OurShow (a,b,c)
+
+instance Num Bool where
+    (+) True True = True
+    (+) False False = True
+    (+) _ _ = False
+
 --------------------------------------------------------------------------------
 -- Overloaded functions
 
-double :: Num a => a -> a
+--double :: Num a => a -> a
 double x = x * 2
 
 --------------------------------------------------------------------------------
