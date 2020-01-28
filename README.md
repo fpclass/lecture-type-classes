@@ -1,2 +1,3 @@
-# lecture5
-Code shown in the fifth CS141 lecture.
+# Lecture: Type classes
+
+Code shown in the CS141 lecture on type classes.
